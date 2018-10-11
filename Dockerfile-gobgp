@@ -5,10 +5,10 @@ RUN wget https://github.com/osrg/gobgp/releases/download/v1.25/gobgp_1.25_linux_
     tar zxvf gobgp_1.25_linux_amd64.tar.gz && \
     mv gobgp* /usr/bin/
 
-RUN mkdir -p /opt/gobgp_test
-WORKDIR /opt/gobgp_test/
+RUN mkdir -p /opt/gobgp
+WORKDIR /opt/gobgp/
 
-COPY configs/* ./configs/
+COPY configs/gobgp/* ./configs/
 
 EXPOSE 50051
 ENTRYPOINT ["gobgpd"]

@@ -14,14 +14,3 @@ up:
 down:
 	docker-compose -f $(DOCKER_COMPOSE) down
 
-.PHONY: connect_gobgp_1
-connect_gobgp_1:
-	docker exec -it docker_gobgp_1_1 /bin/bash
-
-.PHONY: connect_gobgp_2
-connect_gobgp_2:
-	docker exec -it docker_gobgp_2_1 /bin/bash
-
-.PHONY: connect_control
-connect_control:
-	docker exec -it docker_gobgp_control_1 /bin/bash
