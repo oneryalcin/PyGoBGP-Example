@@ -8,7 +8,7 @@ RUN wget https://github.com/osrg/gobgp/releases/download/v1.25/gobgp_1.25_linux_
 RUN mkdir -p /opt/gobgp
 WORKDIR /opt/gobgp/
 
-COPY configs/gobgp/* ./configs/
+COPY docker/gobgp/configs/* ./configs/
 
 EXPOSE 50051
 ENTRYPOINT ["gobgpd"]

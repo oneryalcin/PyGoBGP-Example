@@ -11,7 +11,7 @@ RUN pip install pygobgp jupyter
 # Run Jupyter Notebook and allow remote access on port 8080
 # Also disable token 
 RUN mkdir -p /root/.jupyter
-COPY configs/jupyter/jupyter_notebook_config.py /root/.jupyter/
+COPY docker/control/jupyter/jupyter_notebook_config.py /root/.jupyter/
 
 EXPOSE 8080
 ENTRYPOINT ["jupyter", "notebook", "--port=8080", "--ip=0.0.0.0", "--allow-root"]

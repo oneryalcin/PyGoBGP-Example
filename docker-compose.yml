@@ -5,7 +5,7 @@ services:
   gobgp_control:
    build:
      context: ./
-     dockerfile: Dockerfile-control
+     dockerfile: ./docker/control/Dockerfile
    volumes:
        - ../:/gobgprest
    ports:
@@ -16,7 +16,7 @@ services:
   gobgp_1:
     build:
       context: ./
-      dockerfile: Dockerfile-gobgp
+      dockerfile: ./docker/gobgp/Dockerfile
     command: "-f configs/gobgpd_1.conf"
     networks:
       test_net:
@@ -24,7 +24,7 @@ services:
   gobgp_2:
     build:
       context: ./
-      dockerfile: Dockerfile-gobgp
+      dockerfile: ./docker/gobgp/Dockerfile
     command: "-f configs/gobgpd_2.conf"
     networks:
       test_net:
